@@ -4,7 +4,9 @@ def add_setting(settings, setting):
     value = value.lower()
 
     if key in settings:
-        return f"Setting '{key}' already exists! Cannot add a new setting with this name."
+        return (
+            f"Setting '{key}' already exists! Cannot add a new setting with this name."
+        )
 
     settings[key] = value
     return f"Setting '{key}' added with value '{value}' successfully!"
@@ -45,11 +47,7 @@ def view_settings(settings):
 
 
 # Testing the functions
-test_settings = {
-    "theme": "dark",
-    "notifications": "enabled",
-    "volume": "high"
-}
+test_settings = {"theme": "dark", "notifications": "enabled", "volume": "high"}
 
 print(add_setting(test_settings, ("language", "english")))
 print(update_setting(test_settings, ("theme", "light")))
